@@ -1,8 +1,6 @@
-name: deploy-dev
+name: deploy
 
 on:
-  push:
-    branches: ["dev"]
   workflow_dispatch:
 
 env:
@@ -10,7 +8,7 @@ env:
 
 
 jobs:
-  DeployDev:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
