@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: training-web
+  namespace: training
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: training-web
+  template:
+    metadata:
+      labels:
+        app: training-web
+    spec:
+      containers:
+      - image: 
+        name: training-web
+        ports:
+        - containerPort: 3000
