@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/certificate-arn:
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-central-1:313422618945:certificate/94392e6c-b9d7-40a9-b5d6-14586ff8d160
     alb.ingress.kubernetes.io/group.name: devops-training
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
