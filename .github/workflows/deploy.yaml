@@ -1,0 +1,37 @@
+name: deploy-dev
+
+on:
+  push:
+    branches: ["dev"]
+  workflow_dispatch:
+
+env:
+  AWS_REGION: eu-central-1
+
+
+jobs:
+  DeployDev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_DEV}}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build and push image
+        env:
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin 313422618945.dkr.ecr.eu-central-1.amazonaws.com
+          docker build -f ./Dockerfile -t appstellar/training-web .
+          docker tag appstellar/training-web:latest  ${{ secrets.AWS_ECR_URI }}:latest
+          docker push ${{ secrets.AWS_ECR_URI }}
