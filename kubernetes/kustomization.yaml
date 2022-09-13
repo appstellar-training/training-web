@@ -5,6 +5,6 @@ resources:
 - svc.yaml
 - ingress.yaml
 images:
-- name: appstellar/training-web
+- name: training-web
   newName: ""
   newTag: ""
