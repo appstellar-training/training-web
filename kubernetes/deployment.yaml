@@ -14,7 +14,7 @@ spec:
         app: training-web
     spec:
       containers:
-      - image: 313422618945.dkr.ecr.eu-central-1.amazonaws.com/appstellar/training-web:latest
+      - image: appstellar/training-web
         name: training-web
         ports:
         - containerPort: 3000
