@@ -6,5 +6,5 @@ resources:
 - ingress.yaml
 images:
 - name: training-web
-  newName: ""
-  newTag: ""
+  newName: 313422618945.dkr.ecr.eu-central-1.amazonaws.com/appstellar/training-web
+  newTag: 2aa206df5e440c07724e3ba6f5ceb199423a0fed
