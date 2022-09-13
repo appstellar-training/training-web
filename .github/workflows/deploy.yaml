@@ -44,7 +44,7 @@ jobs:
           DOCKER_IMAGE_NAME: ${{ secrets.AWS_ECR_URI }}:${{ github.sha }}
         run: |
          cd kubernetes
-         kustomize edit set image apptellar/training-web=$DOCKER_IMAGE_NAME
+         kustomize edit set image training-web=$DOCKER_IMAGE_NAME
          
       - name: Commit files
         run: |
