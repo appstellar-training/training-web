@@ -13,7 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to CI/CD training 
+          Welcome to Appstellar CI/CD training 
         </h1>
       </main>
     </div>
