@@ -7,4 +7,4 @@ resources:
 images:
 - name: training-web
   newName: 313422618945.dkr.ecr.eu-central-1.amazonaws.com/appstellar/training-web
-  newTag: e5dab94b24e120e58b1fb291e255d8edd796226d
+  newTag: f56737f06deb08ff37155fe209084bcfb85301a5
